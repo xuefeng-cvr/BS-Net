@@ -65,7 +65,7 @@ For training BS-Net on NYUD v2 training dataset, you can run:
 ```
 python train.py
 ```
-You can download our trained model from [Google Drive](https://drive.google.com/file/d/1c3f8H0TP9Ns1WtFb_xCo4inUinEaHhOo/view?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1pcJfRTBdhtK0aQXk-LDCMQ). (code: tk9f).
+You can download our trained model from [Google Drive](blank) or [Baidu Netdisk](blank).
 
 
 ## Evaluation
