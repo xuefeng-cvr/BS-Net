@@ -8,7 +8,7 @@ Monocular depth prediction is an important task in scene understanding. It aims 
 Furthermore, it can be used for scene understanding and perception, such as object detection, segmentation, and 3D reconstruction.
 Obtaining accurate depth information is a prerequisite for many computer vision tasks.
 
-The Data Preparation and Evaluation are following Junjie Hu with his work (https://github.com/JunjH/Revisiting_Single_Depth_Estimation).
+The Data Preparation and Evaluation are following Junjie Hu with [his work](https://github.com/JunjH/Revisiting_Single_Depth_Estimation).
 Thanks for his valuable work.
 
 ### Citation
