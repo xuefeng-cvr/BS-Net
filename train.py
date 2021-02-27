@@ -13,8 +13,6 @@ import numpy as np
 import util
 from models import modules as modules, net as net, dilation_resnet as resnet
 
-os.environ['CUDA_VISIBLE_DEVICES']='0,1'
-
 parser = argparse.ArgumentParser(description='BS-Net training')
 parser.add_argument('--epochs', default=20, type=int,
                     help='number of total epochs to run')
@@ -27,8 +25,6 @@ parser.add_argument('--weight-decay', '--wd', default=1e-4, type=float,
                     help='weight decay (default: 1e-4)')
 parser.add_argument('--seed', '--rs', default=1024, type=int,
                     help='random seed (default: 0)')
-parser.add_argument('--root', '--rr', default="./results/", type=str,
-                    help='results_root (default:./results/)')
 parser.add_argument('--resume', '--r', default="", type=str,
                     help='resume_root (default:"")')
 ########################################################
@@ -99,7 +95,7 @@ def main():
         loss=train(train_loader, model, optimizer, epoch)
         losses[str(epoch)]=loss
         save_checkpoint({"epoch": epoch, "state_dict": model.state_dict(),"loss_avg":loss},
-                        filename=args.root+'midCheckpoint_{}.pth.tar'.format(epoch))
+                        filename='midCheckpoint_{}.pth.tar'.format(epoch))
 
 def train(train_loader, model, optimizer, epoch):
     batch_time = AverageMeter()

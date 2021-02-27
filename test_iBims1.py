@@ -19,7 +19,7 @@ from util import compute_global_errors,\
                  compute_distance_related_errors
 
 parser = argparse.ArgumentParser(description='BS-Net iBims-1 testing')
-parser.add_argument('--path', '--p', default="./results/NYUD_best.pth.tar", type=str,help='results_root (default:./results/NYUD_best.pth.tar)')
+parser.add_argument('--path', '--p', default="BSN_NYUD.pth.tar", type=str,help='results_root (default:BSN_NYUD.pth.tar)')
 
 os.environ['CUDA_VISIBLE_DEVICES']='1'
 with open('./data/iBims1/imagelist.txt') as f:

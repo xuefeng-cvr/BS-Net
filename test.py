@@ -15,7 +15,7 @@ import scipy.io as sio
 import os
 
 parser = argparse.ArgumentParser(description='BS-Net NYUDv2 testing')
-parser.add_argument('--path', '--p', default="./results/NYUD_best.pth.tar", type=str,help='results_root (default:./results/NYUD_best.pth.tar)')
+parser.add_argument('--path', '--p', default="BSN_NYUD.pth.tar", type=str,help='results_root (default:BSN_NYUD.pth.tar)')
 def define_model(pre_train=True):
     original_model = resnet.resnet50(pretrained=pre_train)
     Encoder = modules.E_resnet(original_model)
