@@ -1,17 +1,17 @@
-import time
+import warnings
+warnings.filterwarnings("ignore")
 import torch
 import numpy as np
 import torch.nn.parallel
 import torch.backends.cudnn as cudnn
 import torch.optim
 import loaddata
-from metrics import AverageMeter, Result
 import sobel
 import os
 import argparse
-import warnings
+
 from models import modules as modules, net as net, dilation_resnet as resnet
-warnings.filterwarnings("ignore")
+
 from util import compute_global_errors,\
                  compute_directed_depth_error,\
                  compute_depth_boundary_error,\
@@ -63,14 +63,11 @@ def main():
     global args
     args=parser.parse_args()
     val_loader = loaddata.getTestingData_iBims1(1)
+
     checkpoint = torch.load(args.path)
     state_dict = checkpoint['state_dict']
-    from collections import OrderedDict
-    new_state_dict = OrderedDict()
-    for k, v in state_dict.items():
-        name = k[7:]  # remove 'module.' of dataparallel
-        new_state_dict[name] = v
-    model.load_state_dict(new_state_dict)
+
+    model.load_state_dict(state_dict)
     model.cuda()
     model.eval() # switch to evaluate mode
     print("=> loaded model (epoch {})".format(checkpoint["epoch"]))

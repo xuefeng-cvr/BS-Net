@@ -1,3 +1,5 @@
+import warnings
+warnings.filterwarnings("ignore")
 import time
 import torch
 import torch.nn.parallel
@@ -9,10 +11,9 @@ from metrics import AverageMeter, Result
 from models import modules as modules, net as net, dilation_resnet as resnet
 import torch.nn.functional as F
 import argparse
-import util
 import sobel
-import scipy.io as sio
-import os
+
+
 
 parser = argparse.ArgumentParser(description='BS-Net NYUDv2 testing')
 parser.add_argument('--path', '--p', default="BSN_NYUD.pth.tar", type=str,help='results_root (default:BSN_NYUD.pth.tar)')
@@ -31,13 +32,7 @@ def main():
 
     checkpoint = torch.load(args.path)
     state_dict = checkpoint['state_dict']
-    from collections import OrderedDict
-    new_state_dict = OrderedDict()
-    for k, v in state_dict.items():
-        name = k[7:] # remove 'module.' of dataparallel
-        new_state_dict[name] = v
-
-    model.load_state_dict(new_state_dict)
+    model.load_state_dict(state_dict)
     model.cuda()
 
     print("=> loaded model (epoch {})".format(checkpoint["epoch"]))
