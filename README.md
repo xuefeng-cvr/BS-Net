@@ -123,28 +123,32 @@ Depth boundary accuracy:
 </table>
 
 Farthest region error under partition ratios:
+
 |Meth|m=6|m=12|m=24|
-|---|---|---|---|---|---|---|---|
+|---|---|---|---|
 |this impl.|0.110|0.132|0.141|
 |paper|0.106|0.126|0.134|
 
 **iBims-1 dataset**
 
 Conventional depth error and accuracy:
+
 |Meth|RMSE$\downarrow$|REL$\downarrow$|Lg10$\downarrow$|sq_rel$\downarrow$|Delta1$\uparrow$|Delta2$\uparrow$|Delta3$\uparrow$|
 |---|---|---|---|---|---|---|---|
 |this impl.|1.146|0.234|0.119|0.385|0.526|0.829|0.932|
 |paper|1.190|0.240|0.120|-|0.51|0.82|0.93|
 
 Planarity error, depth boundary errors, and directed depth error:
+
 |Meth|pe_plan$\downarrow$|pe_ori$\downarrow$|deb_acc$\downarrow$|deb_com$\downarrow$|dde_0$\uparrow$|dde_m$\downarrow$|dde_p$\downarrow$|
 |---|---|---|---|---|---|---|---|
 |this impl.|4.426|31.06|2.059|5.263|81.17|16.92|1.909|
 |paper|3.98|28.75|2.25|5.18|80.54|17.64|1.80|
 
 Farthest region error under partition ratios:
+
 |Meth|m=6|m=12|m=24|
-|---|---|---|---|---|---|---|---|
+|---|---|---|---|
 |this impl.|0.173|0.189|0.218|
 |paper|0.1724|0.1863|0.1981|
 
