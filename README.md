@@ -65,8 +65,88 @@ For training BS-Net on NYUD v2 training dataset, you can run:
 ```
 python train.py
 ```
-You can download our trained model from [Google Drive](blank) or [Baidu Netdisk](blank).
+You can download our trained model from [Google Drive](https://drive.google.com/file/d/1r-xjxP-Ds5inGKRFHK9JX7VoplcFYiRH/view?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1WifbKL2_KQ11H1nsYrG3yw) (Code: 1jmz).
 
+Note that: the performance of the given model is slightly different from the manuscript, which is represented as follows. And $\downarrow$ means smaller is better, and $\uparrow$ means larger is better.
+
+**NYU D v2 dataset**
+
+Depth accuracy and error:
+|Meth|RMSE$\downarrow$|REL$\downarrow$|Lg10$\downarrow$|MAE$\downarrow$|Delta1$\uparrow$|Delta2$\uparrow$|Delta3$\uparrow$|
+|---|---|---|---|---|---|---|---|
+|this impl.|0.548|0.127|0.055|0.336|0.838|0.968|0.993|
+|paper|0.550|0.123|0.053|-|0.846|0.969|0.992|
+
+Depth boundary accuracy:
+<table>
+    <tr>
+        <th rowspan="2">Meth</th>
+        <th colspan="3">th<0.25</th>
+        <th colspan="3">th<0.5</th>
+        <th colspan="3">th<1</th>
+    </tr>
+    <tr>
+        <td>P</td>
+        <td>R</td>
+        <td>F1</td>
+        <td>P</td>
+        <td>R</td>
+        <td>F1</td>
+        <td>P</td>
+        <td>R</td>
+        <td>F1</td>
+    </tr>
+    <tr>
+        <td>this impl.</td>
+        <td>0.642</td>
+        <td>0.494</td>
+        <td>0.552</td>
+        <td>0.659</td>
+        <td>0.496</td>
+        <td>0.559</td>
+        <td>0.737</td>
+        <td>0.537</td>
+        <td>0.613</td>
+    </tr>
+    <tr>
+        <td>paper</td>
+        <td>0.644</td>
+        <td>0.483</td>
+        <td>0.546</td>
+        <td>0.665</td>
+        <td>0.492</td>
+        <td>0.558</td>
+        <td>0.750</td>
+        <td>0.531</td>
+        <td>0.613</td>
+    </tr>
+</table>
+
+Farthest region error under partition ratios:
+|Meth|m=6|m=12|m=24|
+|---|---|---|---|---|---|---|---|
+|this impl.|0.110|0.132|0.141|
+|paper|0.106|0.126|0.134|
+
+**iBims-1 dataset**
+
+Conventional depth error and accuracy:
+|Meth|RMSE$\downarrow$|REL$\downarrow$|Lg10$\downarrow$|sq_rel$\downarrow$|Delta1$\uparrow$|Delta2$\uparrow$|Delta3$\uparrow$|
+|---|---|---|---|---|---|---|---|
+|this impl.|1.146|0.234|0.119|0.385|0.526|0.829|0.932|
+|paper|1.190|0.240|0.120|-|0.51|0.82|0.93|
+
+Planarity error, depth boundary errors, and directed depth error:
+|Meth|pe_plan$\downarrow$|pe_ori$\downarrow$|deb_acc$\downarrow$|deb_com$\downarrow$|dde_0$\uparrow$|dde_m$\downarrow$|dde_p$\downarrow$|
+|---|---|---|---|---|---|---|---|
+|this impl.|4.426|31.06|2.059|5.263|81.17|16.92|1.909|
+|paper|3.98|28.75|2.25|5.18|80.54|17.64|1.80|
+
+Farthest region error under partition ratios:
+|Meth|m=6|m=12|m=24|
+|---|---|---|---|---|---|---|---|
+|this impl.|0.173|0.189|0.218|
+|paper|0.1724|0.1863|0.1981|
 
 ## Evaluation
 
