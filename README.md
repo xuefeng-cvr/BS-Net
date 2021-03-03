@@ -4,9 +4,7 @@ Created by Junfeng Cao, Fei Sheng and Feng Xue.
 
 ### Introduction
 
-Monocular depth prediction is an important task in scene understanding. It aims to predict the dense depth of a single RGB image.
-Furthermore, it can be used for scene understanding and perception, such as object detection, segmentation, and 3D reconstruction.
-Obtaining accurate depth information is a prerequisite for many computer vision tasks.
+Monocular depth prediction is an important task in scene understanding. It aims to predict the dense depth of a single RGB image. Furthermore, it can be used for scene understanding and perception, such as object detection, segmentation, and 3D reconstruction. Obtaining accurate depth information is a prerequisite for many computer vision tasks.
 
 The Data Preparation and Evaluation are following Junjie Hu with [his work](https://github.com/JunjH/Revisiting_Single_Depth_Estimation).
 Thanks for his valuable work.
@@ -41,10 +39,10 @@ You may download the dataset from [NYUD v2](https://drive.google.com/file/d/1WoO
 ```
 BS-Net
 |_ data
-|   |-nyu2_train
-|   |-nyu2_test
-|   |-nyu2_train.csv
-|   |-nyu2_test.csv
+|   |_ nyu2_train
+|   |_ nyu2_test
+|   |_ nyu2_train.csv
+|   |_ nyu2_test.csv
 ```
 
 #### iBims-1
@@ -67,7 +65,7 @@ python train.py
 ```
 You can download our trained model from [Google Drive](https://drive.google.com/file/d/1r-xjxP-Ds5inGKRFHK9JX7VoplcFYiRH/view?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1WifbKL2_KQ11H1nsYrG3yw) (Code: 1jmz).
 
-Note that: the performance of the given model is slightly different from the manuscript, which is represented as follows. And <img src="./downarrow.png" width="10" height="20"> means smaller is better, and <img src="./uparrow.png" width="10" height="20"> means larger is better.
+Note that: the performance of the given model is slightly different from the manuscript, which is represented as follows. <img src="./downarrow.png" width="10" height="20"> means smaller is better, and <img src="./uparrow.png" width="10" height="20"> means larger is better.
 
 ![performance](./performance.png)
 
