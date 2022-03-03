@@ -35,7 +35,7 @@ scikit-learn 0.22.1
 
 #### NYUD v2
 
-You may download the dataset from [NYUD v2](https://drive.google.com/file/d/1WoOZOBpOWfmwe7bknWS5PMUCLBPFKTOw/view?usp=sharing) and unzip it to the ./data folder. You will have the following directory structure:
+You may download the dataset from [GoogleNetDisk](https://drive.google.com/file/d/1WoOZOBpOWfmwe7bknWS5PMUCLBPFKTOw/view?usp=sharing) or [BaiduNetDisk](https://pan.baidu.com/s/1-p6xH0JUrm6HmUH5eu1Atw) （ShareCode：2e4h）, and unzip it to the ./data folder. You will have the following directory structure:
 ```
 BS-Net
 |_ data
